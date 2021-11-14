@@ -1,0 +1,15 @@
+<div class="container">
+  <div   [ngClass]="p.vegan==false?' bg-warning' :'list-group-item'">
+      <span class="badge bg-dark" >
+          {{p.nom}}</span>
+          <span class="d-flex justify-content-between" >
+              <img class="rounded-circle " [src]="p.image" alt="pizza">
+      Prix :{{p.prix}}DT</span>
+      <button class="btn btn-link" (click)="onAffiche()" >Afficher commentaire</button>
+      <ul *ngIf="display" >
+        <li *ngFor ="let c of p.comments" >
+          <ama-comment [com]="c"></ama-comment>
+        </li>
+      </ul>
+          </div>
+</div> 
